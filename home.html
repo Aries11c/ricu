@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="home-box">
+    <h1>Selamat datang, <span id="user"></span>!</h1>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    let user = JSON.parse(localStorage.getItem("loggedInUser"));
+    if(!user){
+      window.location.href = "index.html";
+    } else {
+      document.getElementById("user").innerText = user.username;
+    }
+
+    function logout(){
+      localStorage.removeItem("loggedInUser");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
