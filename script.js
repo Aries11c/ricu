@@ -38,7 +38,7 @@ if(document.getElementById("loginForm")){
     if(validUser){
       alert("Login berhasil!");
       localStorage.setItem("loggedInUser", JSON.stringify(validUser));
-      window.location.href = "home.html";
+      window.location.href = "pages/home.html";
     } else {
       alert("Email atau password salah!");
     }
